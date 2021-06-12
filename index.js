@@ -1,8 +1,16 @@
 const fruits = [
-    {id: 1, title: "Яблоки", price: 20, img = 'https://lifeglobe.net/x/entry/6259/1a-0.jpg'},
-    {id: 2, title: "Апельсины", price: 30, img = 'https://lh3.googleusercontent.com/proxy/1KlJmztMgygXX7uulFWGcH58FcybPdZWVOQbh-BerRLQVnFzUbEbq_f5G2TGahWx3jr6MvHXwUz4dDxYurmwR6MtiIKvysQgPTFY1qhnpeHMeU9joUZz_RQBHuHfsuE'},
-    {id: 3, title: "Манго", price: 40, img = 'https://zamorozka54.ru/images/product/38_f18cf7bb1822.jpg'},
+    {id: 1, title: "Яблоки", price: 20, img: 'https://lifeglobe.net/x/entry/6259/1a-0.jpg'},
+    {id: 2, title: "Апельсины", price: 30, img: 'https://lh3.googleusercontent.com/proxy/1KlJmztMgygXX7uulFWGcH58FcybPdZWVOQbh-BerRLQVnFzUbEbq_f5G2TGahWx3jr6MvHXwUz4dDxYurmwR6MtiIKvysQgPTFY1qhnpeHMeU9joUZz_RQBHuHfsuE'},
+    {id: 3, title: "Манго", price: 40, img: 'https://zamorozka54.ru/images/product/38_f18cf7bb1822.jpg'},
 ]
+
+
+/* cardsContainer.appendChild(card); */
+
+fruits.forEach(item => {
+    
+    cardsContainer.appendChild(_createCard(item));
+})
 
 /* 
 1. динамически на основе массива вывести список карточек

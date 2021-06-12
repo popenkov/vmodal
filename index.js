@@ -5,12 +5,49 @@ const fruits = [
 ]
 
 
-/* cardsContainer.appendChild(card); */
+function generateCards (arr) {
+arr.forEach(item => {
+    let newCard = _createCard(item);
+    console.log(newCard);
+    newCard.querySelector('.btn-primary').addEventListener('click', (evt) => {
+       let fruitId = evt.target.parentNode.parentNode.id - 1;
+        console.log(fruits[fruitId].title)
+        const fruitModal = $.modal({title: fruits[fruitId].title, closable: true, content: `<p>Стоимость товара ${fruits[fruitId].price} рублей</p>`, width: '300px',});
+        fruitModal.open();
+      })
 
-fruits.forEach(item => {
+    newCard.querySelector('.btn-danger').addEventListener('click', (evt) => {
     
-    cardsContainer.appendChild(_createCard(item));
+    console.log( evt.target.parentNode.parentNode.id);
+    let fruitId = evt.target.parentNode.parentNode.id - 1;
+    const fruitModal = $.modal({title: fruits[fruitId].title, closable: true, content: `<p>Удалить ${fruits[fruitId].title} ?</p>`, width: '300px', footerButtons: [{
+        text: 'Ok',
+        type: 'primary', 
+        handler () {
+            console.log('primary btn clicked');
+            myModal.close();
+        }
+    },
+    
+        {text: 'Cancel',
+        type: 'danger', 
+        handler () {
+            console.log('danger btn clicked');
+            myModal.close();
+        }
+    }]
+    
+});
+    fruitModal.open();
+    })
+    cardsContainer.appendChild(newCard);
 })
+
+
+
+}
+
+generateCards(fruits);
 
 /* 
 1. динамически на основе массива вывести список карточек

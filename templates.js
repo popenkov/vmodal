@@ -1,12 +1,14 @@
 const cardsContainer = document.querySelector('.row');
 
+
 function _createCard (options) {
     let {id, title, price, img} = options;
 
     
 
     const card = document.createElement('div');
-    card.classList.add('card', 'col', `#${id}`);
+    card.classList.add('card', 'col');
+    card.id = id;
     card.insertAdjacentHTML('afterBegin', `
     <img class="card-img-top" style="height: 300px" src=${img}>
                     <div class="card-body">
@@ -15,6 +17,8 @@ function _createCard (options) {
                       <a href="#" class="btn btn-danger">Удалить</a>
                     </div>`
 )
+
+
 
 return card;
 

@@ -1,4 +1,4 @@
-const cardsContainer = document.querySelector('.row');
+/* const cardsContainer = document.querySelector('.row');
 
 
 function _createCard (options) {
@@ -26,3 +26,4 @@ return card;
 
 
 
+ */
